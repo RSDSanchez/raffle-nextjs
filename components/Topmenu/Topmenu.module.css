@@ -1,0 +1,35 @@
+.center {
+  margin: auto;
+}
+
+.logo4e {
+  max-width: 50px;
+}
+
+.shadow {
+  box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.25);
+  padding: 0 3%;
+  line-height: 50px;
+}
+
+.link {
+  color: black !important;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.07rem;
+  font-size: 1rem;
+  margin-left: 2rem;
+}
+
+.link:hover {
+  color: #e2ad10 !important;
+}
+
+.padding-h {
+  padding: 0 3%;
+}
+
+.flag {
+  width: 25px;
+  margin-left: 2rem;
+}
