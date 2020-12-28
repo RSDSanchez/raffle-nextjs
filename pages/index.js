@@ -3,6 +3,7 @@ import RaffleCard from '../components/RaffleCard/RaffleCard';
 import DefaultLayout from '../layouts/DefaultLayout';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
+import Description from '../components/Description/Description';
 
 const Raffles = () => {
   const [raffles, setRaffles] = useState(data);
@@ -17,7 +18,10 @@ const Raffles = () => {
 
   return (
     <>
-      <Container fluid className="margin-top margin-bottom">
+      <Container as="header" className="margin-top">
+        <Description />
+      </Container>
+      <Container as="main" fluid className="margin-top margin-bottom">
         <Row>
           {raffles.map((raffle) => {
             const startDate = new Date(raffle.start_date);
