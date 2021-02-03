@@ -6,3 +6,4 @@ data.js
 public/images/products/*
 !public/images/products/CZ5093-100/
 !public/images/products/554724-074/
+.env.local
