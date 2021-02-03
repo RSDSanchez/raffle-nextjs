@@ -1,6 +1,22 @@
 {
   "products": [
     {
+      "id": "DD1390-100",
+      "name": "Nike Dunk Low Premium Sail/Fossil-Medium Curry",
+      "start_date": "December 24 2020 10:00:00",
+      "finish_date": "February 6 2021 22:00:00",
+      "description_es": [
+        "The basketball icon of the 80's, created for the court but adapted to the streets, returns with a mix of hairy suede, shiny skin and earth tones that are suitable for any occasion. With its classic basketball design, the Nike Dunk High Premium DD1390-100 Sail/Fossil-Medium Curry brings the vintage style of the 80s back to the streets. Its high-profile, padded ankle area combines a classic look with great comfort."
+      ],
+      "description_en": [
+        "The basketball icon of the 80's, created for the court but adapted to the streets, returns with a mix of hairy suede, shiny skin and earth tones that are suitable for any occasion. With its classic basketball design, the Nike Dunk High Premium DD1390-100 Sail/Fossil-Medium Curry brings the vintage style of the 80s back to the streets. Its high-profile, padded ankle area combines a classic look with great comfort."
+      ],
+      "pic_main": "DD1390-100_01.jpg",
+      "pic_left": "DD1390-100_02.jpg",
+      "pic_right": "DD1390-100_03.jpg",
+      "formID": "mlkp3ci1qt7mxy4a"
+    },
+    {
       "id": "DD3384-600",
       "name": "AIR FORCE 1 '07 QS",
       "start_date": "December 24 2020 10:00:00",
