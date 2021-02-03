@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import { data } from '../lib/data';
 import DefaultLayout from '../layouts/DefaultLayout';
 import { useRecoilState } from 'recoil';
 import { langState } from '../atoms/langRecoil';
@@ -74,17 +73,22 @@ const Raffle = ({ raffles }) => {
 };
 
 export async function getStaticProps() {
-  const raffles = data;
+  const data = await fetch('https://preprod.4elementos.es/raffles/data.json');
+  const dataToJSON = await data.json();
+  const raffles = dataToJSON.products;
 
   return {
     props: {
       raffles,
     },
+    revalidate: 3600,
   };
 }
 
 export async function getStaticPaths() {
-  const raffles = data;
+  const data = await fetch('https://preprod.4elementos.es/raffles/data.json');
+  const dataToJSON = await data.json();
+  const raffles = dataToJSON.products;
 
   const paths = raffles.map((raffle) => `/${raffle.id}`);
 
