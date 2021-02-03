@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import FormModal from '../FormModal/FormModal';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 const FormButton = ({ raffle }) => {
   const [today, setToday] = useState(Date.now());
   const [showFormModal, setShowFormModal] = useState(false);
+  const [token, setToken] = useState('');
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   useEffect(() => {
     setInterval(() => {
@@ -13,8 +16,11 @@ const FormButton = ({ raffle }) => {
   });
 
   const formButtonClick = () => {
+    if (!executeRecaptcha) {
+      return;
+    }
+
     setShowFormModal(true);
-    console.log(showFormModal);
   };
 
   const finishDate = new Date(raffle.finish_date);

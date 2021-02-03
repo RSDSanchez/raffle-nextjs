@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { RecoilRoot } from 'recoil';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../public/css/fontawesome-all.min.css';
 import '../public/css/style.css';
@@ -38,9 +39,11 @@ function MyApp({ Component, pageProps }) {
       </Head>
 
       <RecoilRoot>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <GoogleReCaptchaProvider reCaptchaKey="6LdwriUaAAAAADTSphZgQecQ7Hsr-r5olGG2yUw0">
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </GoogleReCaptchaProvider>
       </RecoilRoot>
     </>
   );
