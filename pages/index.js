@@ -44,7 +44,7 @@ export async function getStaticProps() {
     props: {
       raffles,
     },
-    revalidate: 60,
+    revalidate: 1,
   };
 }
 
