@@ -1,6 +1,6 @@
 node_modules
 next.config.js
-data.json
+/data.json
 data.js
 .next
 public/images/products/*
