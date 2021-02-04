@@ -7,6 +7,7 @@ Small microsite to join footwear raffles developed using Next.js to ensure Serve
 ##Instalation
 
 - Download or clone the repository
+- Rename `.env.local.example` to `.env-local`
 - Rename `data.example.json` to `data.json`
 - Install dependencies
 

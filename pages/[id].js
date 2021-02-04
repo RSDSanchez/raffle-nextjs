@@ -8,7 +8,7 @@ import FormButton from '../components/FormButton/FormButton';
 import { useEffect, useState } from 'react';
 
 export async function getStaticProps() {
-  const data = await fetch('https://4elementos.es/data.json');
+  const data = await fetch(process.env.DATA_JSON_LOCATION);
   const dataToJSON = await data.json();
   const raffles = dataToJSON.products;
 
@@ -21,7 +21,7 @@ export async function getStaticProps() {
 }
 
 export async function getStaticPaths() {
-  const data = await fetch('https://4elementos.es/data.json');
+  const data = await fetch(process.env.DATA_JSON_LOCATION);
   const dataToJSON = await data.json();
   const raffles = dataToJSON.products;
 

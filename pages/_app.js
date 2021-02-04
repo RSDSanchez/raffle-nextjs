@@ -39,7 +39,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
 
       <RecoilRoot>
-        <GoogleReCaptchaProvider reCaptchaKey="6LdwriUaAAAAADTSphZgQecQ7Hsr-r5olGG2yUw0">
+        <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY}>
           <Layout>
             <Component {...pageProps} />
           </Layout>
