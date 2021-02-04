@@ -7,6 +7,29 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import FormButton from '../components/FormButton/FormButton';
 import { useEffect, useState } from 'react';
 
+export async function getStaticProps() {
+  const data = await fetch('https://localhost/data.json');
+  const dataToJSON = await data.json();
+  const raffles = dataToJSON.products;
+
+  return {
+    props: {
+      raffles,
+    },
+    revalidate: 30,
+  };
+}
+
+export async function getStaticPaths() {
+  const data = await fetch('https://localhost/data.json');
+  const dataToJSON = await data.json();
+  const raffles = dataToJSON.products;
+
+  const paths = raffles.map((raffle) => `/${raffle.id}`);
+
+  return { paths, fallback: false };
+}
+
 const Raffle = ({ raffles }) => {
   const [userLang, setUserLang] = useRecoilState(langState);
   const [description, setDescription] = useState([]);
@@ -71,29 +94,6 @@ const Raffle = ({ raffles }) => {
     </>
   );
 };
-
-export async function getStaticProps() {
-  const data = await fetch('https://preprod.4elementos.es/data.json');
-  const dataToJSON = await data.json();
-  const raffles = dataToJSON.products;
-
-  return {
-    props: {
-      raffles,
-    },
-    revalidate: 30,
-  };
-}
-
-export async function getStaticPaths() {
-  const data = await fetch('https://preprod.4elementos.es/data.json');
-  const dataToJSON = await data.json();
-  const raffles = dataToJSON.products;
-
-  const paths = raffles.map((raffle) => `/${raffle.id}`);
-
-  return { paths, fallback: false };
-}
 
 export default Raffle;
 
