@@ -4,6 +4,19 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 import Description from '../components/Description/Description';
 
+export async function getStaticProps() {
+  const data = await fetch('https://preprod.4elementos.es/data.json');
+  const dataToJSON = await data.json();
+  const raffles = dataToJSON.products;
+
+  return {
+    props: {
+      raffles,
+    },
+    revalidate: 30,
+  };
+}
+
 const Raffles = ({ raffles }) => {
   const [today, setToday] = useState(Date.now());
 
@@ -34,19 +47,6 @@ const Raffles = ({ raffles }) => {
     </>
   );
 };
-
-export async function getStaticProps() {
-  const data = await fetch('https://preprod.4elementos.es/raffles/data.json');
-  const dataToJSON = await data.json();
-  const raffles = dataToJSON.products;
-
-  return {
-    props: {
-      raffles,
-    },
-    revalidate: 1,
-  };
-}
 
 export default Raffles;
 

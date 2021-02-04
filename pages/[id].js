@@ -73,7 +73,7 @@ const Raffle = ({ raffles }) => {
 };
 
 export async function getStaticProps() {
-  const data = await fetch('https://preprod.4elementos.es/raffles/data.json');
+  const data = await fetch('https://preprod.4elementos.es/data.json');
   const dataToJSON = await data.json();
   const raffles = dataToJSON.products;
 
@@ -81,12 +81,12 @@ export async function getStaticProps() {
     props: {
       raffles,
     },
-    revalidate: 1,
+    revalidate: 30,
   };
 }
 
 export async function getStaticPaths() {
-  const data = await fetch('https://preprod.4elementos.es/raffles/data.json');
+  const data = await fetch('https://preprod.4elementos.es/data.json');
   const dataToJSON = await data.json();
   const raffles = dataToJSON.products;
 
