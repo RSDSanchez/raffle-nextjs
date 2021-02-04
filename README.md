@@ -7,7 +7,7 @@ Small microsite to join footwear raffles developed using Next.js to ensure Serve
 ##Instalation
 
 - Download or clone the repository
-- Rename `/lib/data.example.js` to `data.js`
+- Rename `data.example.json` to `data.json`
 - Install dependencies
 
 ```
@@ -20,7 +20,7 @@ npm install
 
 ###Add more Raffles
 
-- Edit `lib/data.js` and add new objects with the structure:
+- Edit `data.json` and add new objects with the structure:
 - `id:` unique product id
 - `name:` product name
 - `start_date:` raffle start date
