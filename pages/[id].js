@@ -27,7 +27,7 @@ export async function getStaticPaths() {
 
   const paths = raffles.map((raffle) => `/${raffle.id}`);
 
-  return { paths, fallback: false };
+  return { paths, fallback: true };
 }
 
 const Raffle = ({ raffles }) => {
@@ -35,6 +35,10 @@ const Raffle = ({ raffles }) => {
   const [description, setDescription] = useState([]);
   const router = useRouter();
   const zapa = router.query.id;
+
+  if (router.isFallback) {
+    return <p>Loading...</p>;
+  }
 
   const raffleFiltered = raffles.filter((item) => item.id === zapa);
   const raffle = raffleFiltered[0];
