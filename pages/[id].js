@@ -8,14 +8,9 @@ import FormButton from '../components/FormButton/FormButton';
 import { useEffect, useState } from 'react';
 
 export async function getStaticProps() {
-  const data = await fetch(process.env.DATA_JSON_LOCATION, {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
+  const data = await fetch(process.env.DATA_JSON_LOCATION);
   const dataToJSON = await data.json();
   const raffles = dataToJSON.products;
-  raffles = JSON.parse(raffles);
 
   return {
     props: {
