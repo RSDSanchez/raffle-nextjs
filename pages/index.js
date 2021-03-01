@@ -6,7 +6,9 @@ import Description from '../components/Description/Description';
 
 export async function getStaticProps() {
   const data = await fetch(process.env.DATA_JSON_LOCATION);
+  console.log(data);
   const dataToJSON = await data.json();
+  console.log(dataToJSON);
   const raffles = dataToJSON.products;
 
   return {
