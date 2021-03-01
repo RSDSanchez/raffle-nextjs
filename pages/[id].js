@@ -68,7 +68,10 @@ const Raffle = ({ raffles }) => {
       <Container fluid className="margin-top margin-bottom">
         <Row>
           <Col>
-            <img className="img-fluid" src={`images/products/${raffle.id}/${raffle.pic_main}`} />
+            <img
+              className="img-fluid"
+              src={`https://4elementos.es/raffles/products/${raffle.id}/${raffle.pic_main}`}
+            />
           </Col>
         </Row>
         <Row className="raffle_info">
@@ -88,10 +91,16 @@ const Raffle = ({ raffles }) => {
         </Row>
         <Row className="margin-top">
           <Col md={6}>
-            <img className="img-fluid" src={`images/products/${raffle.id}/${raffle.pic_left}`} />
+            <img
+              className="img-fluid"
+              src={`https://4elementos.es/raffles/products/${raffle.id}/${raffle.pic_left}`}
+            />
           </Col>
           <Col md={6}>
-            <img className="img-fluid" src={`images/products/${raffle.id}/${raffle.pic_right}`} />
+            <img
+              className="img-fluid"
+              src={`https://4elementos.es/raffles/products/${raffle.id}/${raffle.pic_right}`}
+            />
           </Col>
         </Row>
       </Container>

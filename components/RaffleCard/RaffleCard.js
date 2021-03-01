@@ -15,7 +15,10 @@ const RaffleCard = ({ raffle }) => {
       <div className={styles.image_container}>
         <Link href={raffle.id}>
           <a>
-            <img src={`images/products/${raffle.id}/${raffle.pic_left}`} className={styles.image} />
+            <img
+              src={`https://4elementos.es/raffles/products/${raffle.id}/${raffle.pic_left}`}
+              className={styles.image}
+            />
           </a>
         </Link>
       </div>
