@@ -12,6 +12,7 @@ export async function getStaticProps() {
   });
   const dataToJSON = await data.json();
   const raffles = dataToJSON.products;
+  raffles = JSON.parse(raffles);
 
   return {
     props: {
