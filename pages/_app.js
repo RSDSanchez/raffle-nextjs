@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }) {
           content="4Elementos Plataforma de Lanzamientos: anótate a los Raffles más top en 4Elementos y consigue las zapas más exclusivas."
         />
         <meta name="author" content="4Elementos" />
-        <link rel="icon" type="image/png" href="images/favicon.ico" />
+        <link rel="icon" type="image/png" href="https://4elementos.es/raffles/favicon.ico" />
         <link
           href="https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat:300,300i,400,400i,500,500i,600,600i,700&display=swap"
           rel="stylesheet"
