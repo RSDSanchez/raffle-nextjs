@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Accordion, Card, Button } from 'react-bootstrap';
+import { useRecoilState } from 'recoil';
+import { langState } from '../../atoms/langRecoil';
 
 const Description = () => {
   const [width, setWidth] = useState();
+  const [userLang, setUserLang] = useRecoilState(langState);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -20,12 +23,9 @@ const Description = () => {
         <Accordion.Collapse eventKey="0">
           <Card.Body>
             <p className="raffle_desc">
-              ¡No te pierdas los últimos <strong>raffles de los productos más exclusivos!</strong>{' '}
-              En este apartado encontrarás la selección de los artículos más limitados, las
-              colaboraciones más locas y los <strong>últimos lanzamientos</strong>. Descubre todos
-              los productos de raffle más novedosos, como las <strong>Nike Dunk</strong> o las{' '}
-              <strong>Jordan 1</strong> más codiciadas del momento. Apúntate antes que nadie para
-              hacerte con los artículos más limitados de las mejores marcas de streetwear.
+              {userLang === 'es'
+                ? `No te pierdas los últimos raffles de los productos más exclusivos! En este apartado encontrarás la selección de los artículos más limitados, las colaboraciones más locas y los últimos lanzamientos. Descubre todos los productos de raffle más novedosos, como las Nike Dunk o las Jordan 1 más codiciadas del momento. Apúntate antes que nadie para hacerte con los artículos más limitados de las mejores marcas de streetwear.`
+                : `Don't miss the latest raffles of the most exclusive products! In this section you will find the selection of the most limited items, the craziest collaborations and the latest releases. Check out all the latest raffle products, such as the Nike Dunk or the most coveted Jordan 1 of the moment. Sign up before anyone else to get your hands on the most limited items from the best streetwear brands.`}
             </p>
           </Card.Body>
         </Accordion.Collapse>
