@@ -32,7 +32,11 @@ const Topmenu = () => {
     <>
       <Navbar className={styles.shadow} expand="lg" bg="white">
         <Navbar.Brand className={styles.center} href="https://4elementos.es/">
-          <img className={styles.logo4e} src="images/4elementos-logo.jpg" alt="" />
+          <img
+            className={styles.logo4e}
+            src="https://4elementos.es/raffles/4elementos-logo.jpg"
+            alt=""
+          />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -55,19 +59,19 @@ const Topmenu = () => {
             <Nav.Link className={styles.link} href="https://4elementos.es/es/3-lanzamientos">
               {userLang === 'es' ? 'Lanzamientos' : 'Releases'}
             </Nav.Link>
-            <Nav.Link className={styles.link} href="https://4elementos.es/raffles">
+            <Nav.Link className={styles.link} href="https://4elementos.es/releases">
               Raffles
             </Nav.Link>
-            <Nav.Link className={styles.link} href="https://preprod.4elementos.es/es/ofertas">
-              Promo
+            <Nav.Link className={styles.link} href="https://4elementos.es/es/ofertas">
+              Ofertas
             </Nav.Link>
           </Nav>
           <div>
             <a href="#" onClick={clickEsFlag}>
-              <img className={styles.flag} src="images/es.jpg" />
+              <img className={styles.flag} src="https://4elementos.es/raffles/es.jpg" />
             </a>
             <a href="#" onClick={clickEnFlag}>
-              <img className={styles.flag} src="images/en.jpg" />
+              <img className={styles.flag} src="https://4elementos.es/raffles/en.jpg" />
             </a>
           </div>
         </Navbar.Collapse>

@@ -2,12 +2,15 @@ import { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import FormModal from '../FormModal/FormModal';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { useRecoilState } from 'recoil';
+import { langState } from '../../atoms/langRecoil';
 
 const FormButton = ({ raffle }) => {
   const [today, setToday] = useState(Date.now());
   const [showFormModal, setShowFormModal] = useState(false);
   const [token, setToken] = useState('');
   const { executeRecaptcha } = useGoogleReCaptcha();
+  const [userLang, setUserLang] = useRecoilState(langState);
 
   useEffect(() => {
     setInterval(() => {
@@ -38,7 +41,7 @@ const FormButton = ({ raffle }) => {
           {days}d {hours}h {minutes}m {seconds}s
         </p>
         <Button variant="dark" className="rounded-0" onClick={formButtonClick}>
-          Apuntarme
+          {userLang === 'es' ? 'Apuntarme' : 'Sign me up'}
         </Button>
         <FormModal
           showFormModal={showFormModal}
