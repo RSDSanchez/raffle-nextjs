@@ -18,11 +18,12 @@ const FormButton = ({ raffle }) => {
     }, 1000);
   });
 
-  const formButtonClick = () => {
+  const formButtonClick = async () => {
     if (!executeRecaptcha) {
       return;
     }
-
+    const result = await executeRecaptcha('form');
+    setToken(result);
     setShowFormModal(true);
   };
 
@@ -40,7 +41,7 @@ const FormButton = ({ raffle }) => {
         <p>
           {days}d {hours}h {minutes}m {seconds}s
         </p>
-        <Button variant="dark" className="rounded-0" onClick={formButtonClick}>
+        <Button id="form" variant="dark" className="rounded-0" onClick={formButtonClick}>
           {userLang === 'es' ? 'Apuntarme' : 'Sign me up'}
         </Button>
         <FormModal
