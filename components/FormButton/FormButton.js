@@ -23,6 +23,7 @@ const FormButton = ({ raffle }) => {
       return;
     }
     const result = await executeRecaptcha('form');
+    console.log(result);
     setToken(result);
     setShowFormModal(true);
   };
