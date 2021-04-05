@@ -18,14 +18,20 @@ const FormButton = ({ raffle }) => {
     }, 1000);
   });
 
+  useEffect(() => {
+    const result = executeRecaptcha('form');
+    console.log(result);
+    setToken(result);
+  }, []);
+
   const formButtonClick = async () => {
     if (!executeRecaptcha) {
       return;
     }
-    const result = await executeRecaptcha('form');
-    console.log(result);
-    setToken(result);
-    setShowFormModal(true);
+
+    if (token) {
+      setShowFormModal(true);
+    }
   };
 
   const finishDate = new Date(raffle.finish_date);
