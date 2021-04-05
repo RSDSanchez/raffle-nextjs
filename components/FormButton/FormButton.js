@@ -20,7 +20,6 @@ const FormButton = ({ raffle }) => {
 
   useEffect(() => {
     const result = executeRecaptcha('form');
-    console.log(result);
     setToken(result);
   }, []);
 
