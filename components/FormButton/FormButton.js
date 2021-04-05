@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import FormModal from '../FormModal/FormModal';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { useRecoilState } from 'recoil';
-import { langState } from '../../atoms/langRecoil';
+import { langState, isStore } from '../../atoms/langRecoil';
 
 const FormButton = ({ raffle }) => {
   const [today, setToday] = useState(Date.now());
@@ -11,6 +11,7 @@ const FormButton = ({ raffle }) => {
   const [token, setToken] = useState('');
   const { executeRecaptcha } = useGoogleReCaptcha();
   const [userLang, setUserLang] = useRecoilState(langState);
+  const [store, setStore] = useRecoilState(isStore);
 
   useEffect(() => {
     setInterval(() => {
@@ -18,18 +19,23 @@ const FormButton = ({ raffle }) => {
     }, 1000);
   });
 
+  useEffect(() => {
+    const result = executeRecaptcha('form');
+    setToken(result);
+  }, []);
+
   const formButtonClick = async () => {
     if (!executeRecaptcha) {
       return;
     }
-    const result = await executeRecaptcha('form');
-    console.log(result);
-    setToken(result);
-    setShowFormModal(true);
+
+    if (token) {
+      setShowFormModal(true);
+    }
   };
 
-  const finishDate = new Date(raffle.finish_date);
-  const startDate = new Date(raffle.start_date);
+  const finishDate = store ? new Date(raffle.finish_store_date) : new Date(raffle.finish_date);
+  const startDate = store ? new Date(raffle.start_store_date) : new Date(raffle.start_date);
 
   if (startDate < today && today < finishDate) {
     let distance = finishDate - today;
