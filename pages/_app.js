@@ -48,6 +48,16 @@ function MyApp({ Component, pageProps }) {
             ></iframe>
           </noscript>
           <Layout>
+            {/* <!-- Google Tag Manager (noscript) --> */}
+            {/* <noscript>
+              <iframe
+                src="https://www.googletagmanager.com/ns.html?id=GTM-59DTL2X"
+                height="0"
+                width="0"
+                style="display:none;visibility:hidden"
+              ></iframe>
+            </noscript> */}
+            {/* <!-- End Google Tag Manager (noscript) --> */}
             <Component {...pageProps} />
           </Layout>
         </GoogleReCaptchaProvider>
