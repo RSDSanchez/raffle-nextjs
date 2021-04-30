@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }) {
         />
 
         {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-        {/* <script
+        <script
           dangerouslySetInnerHTML={{
             __html: `
                     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -34,30 +34,12 @@ function MyApp({ Component, pageProps }) {
                     })(window,document,'script','dataLayer','GTM-59DTL2X');
                   `,
           }}
-        /> */}
+        />
       </Head>
 
       <RecoilRoot>
         <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY}>
-          <noscript>
-            <iframe
-              src="https://www.googletagmanager.com/ns.html?id=GTM-59DTL2X"
-              height="0"
-              width="0"
-              style="display:none;visibility:hidden"
-            ></iframe>
-          </noscript>
           <Layout>
-            {/* <!-- Google Tag Manager (noscript) --> */}
-            {/* <noscript>
-              <iframe
-                src="https://www.googletagmanager.com/ns.html?id=GTM-59DTL2X"
-                height="0"
-                width="0"
-                style="display:none;visibility:hidden"
-              ></iframe>
-            </noscript> */}
-            {/* <!-- End Google Tag Manager (noscript) --> */}
             <Component {...pageProps} />
           </Layout>
         </GoogleReCaptchaProvider>
